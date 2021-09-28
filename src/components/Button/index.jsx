@@ -1,5 +1,5 @@
 import React from "react";
-import colors from "../../utils/styles/colors";
+import { colors } from "../../utils/styles/colors";
 import styled from "styled-components";
 
 const STYLES = {
@@ -56,12 +56,13 @@ const STYLES = {
 };
 
 const SIZES = {
-  medium: { fontWeight: 400, padding: "10px 20px", fontSize: "24px" },
+  medium: { fontWeight: 400, padding: "12px 22px", fontSize: "24px" },
   small: { fontWeight: 300, padding: "5px 15px", fontSize: "18px" },
 };
 
 const StyledButton = styled.button`
-  font-family: "Bubbler One", sans-serif;
+  font-family: "Lora", serif;
+  margin: 0 1rem 0 0;
   ${(props) => {
     if (props.buttonSize) {
       let btnSize = SIZES[props.buttonSize];
@@ -90,7 +91,7 @@ const StyledButton = styled.button`
     color: ${STYLES.primarySolid.color};`;
     }
   }};
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   transition: transform 0.3s ease;
   &:hover {
