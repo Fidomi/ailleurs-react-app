@@ -1,11 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import colors from "./colors";
+import { fonts, fontSizes } from "./fonts";
 
 const StyledGlobalStyle = createGlobalStyle`
-
-
     * {
-        font-family: 'Lora', serif;
+        font-family: ${fonts.fontBody};
     }
 
     html,
@@ -14,19 +13,21 @@ const StyledGlobalStyle = createGlobalStyle`
         margin: 0;
         background-color: ${({ isDarkMode }) =>
           isDarkMode ? colors.dark : colors.secondary};
-        margin: 0;  
+        margin: 0;
+        font-size:${fontSizes.fontM};
+        z-index:0;
     }
 
     h1{
-        font-family: 'Lora', serif;
-        font-size: 2rem;
-        weight: 500;
+        font-family: ${fonts.fontTitle};
+        font-size: ${fontSizes.fontXL};
+        weight: 800;
     }
 
     h2{
-        font-family: 'Lora', serif;
-        font-size: 1.8rem;
-        weight: 200;
+        font-family: ${fonts.fontTitle};
+        font-size: ${fontSizes.fontL};
+        weight: 500;
     }
 
     #root{
