@@ -1,15 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import colors from "./colors";
 import { fonts, fontSizes } from "./fonts";
+import device from "./device";
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
+        box-sizing: border-box;
         font-family: ${fonts.fontBody};
     }
 
     html,
     body {
-        box-sizing: border-box;
         margin: 0;
         background-color: ${({ isDarkMode }) =>
           isDarkMode ? colors.dark : colors.secondary};
@@ -20,8 +21,17 @@ const StyledGlobalStyle = createGlobalStyle`
 
     h1{
         font-family: ${fonts.fontTitle};
-        font-size: ${fontSizes.fontXL};
+        font-size: ${fontSizes.fontM};
         weight: 800;
+        @media ${device.tablet} {
+            font-size: ${fontSizes.fontL};
+        }
+        @media ${device.laptop} {
+            font-size: ${fontSizes.fontXL};
+        }
+        @media ${device.desktop} {
+            font-size: ${fontSizes.fontXXL};
+        }
     }
 
     h2{
