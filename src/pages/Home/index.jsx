@@ -33,7 +33,7 @@ function Home() {
           <Button
             type="button"
             buttonStyle="secondarySolid"
-            buttonSize="medium"
+            buttonSize="medMobile"
           >
             Trouver ma destination
           </Button>

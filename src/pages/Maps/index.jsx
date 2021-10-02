@@ -1,10 +1,10 @@
-import MapOfFrance from "../../components/MapOfFrance";
+import France from "../../components/France";
 
 function Maps() {
   return (
     <div>
       Cartes
-      <MapOfFrance />
+      <France width="500px" height="483px" />
     </div>
   );
 }
