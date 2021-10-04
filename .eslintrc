@@ -19,15 +19,34 @@
         "react/jsx-uses-vars": "error",
         "strict": "warn",
         "no-undef": "warn",
-        "linebreak-style": [
-            "error",
-            "windows"
+        "object-curly-spacing": [
+            "warn",
+            "always"
         ],
+        "linebreak-style": 0,
         "one-var": 0,
         "no-ternary": 0,
         "multiline-ternary": 0,
         "quotes": 0,
-        "no-extra-parens": 0
+        "quote-props": 0,
+        "no-extra-parens": 0,
+        "func-style": 0,
+        "no-plusplus": 0,
+        "no-magic-numbers": 0,
+        "space-before-function-paren": [
+            "warn",
+            {
+                "anonymous": "never",
+                "asyncArrow": "always",
+                "named": "never"
+            }
+        ],
+        "padded-blocks": [
+            "error",
+            "never"
+        ]
+        // "max-len": 0,
+        // "id-length": 0
     },
     "settings": {
         "react": {
