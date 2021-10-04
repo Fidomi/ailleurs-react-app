@@ -5,18 +5,25 @@ import { StyledSideMenu } from './style';
 import { menuCategories as sideCategories } from '../../data/menuCategories';
 
 const SideMenu = (props) => (
-    <StyledSideMenu open={props.open} onClick={props.onClick}>
+    <StyledSideMenu
+        open={props.open}
+        onClick={props.onClick}
+        onMouseLeave={() => {
+            props.handleOpen(false);
+        }}
+    >
         <AccordionSection>
             {sideCategories.map((sideCategory) => (
                 <Accordion
+                    open={props.open}
                     key={sideCategory.id}
                     subcategories={
                         sideCategory.subcategories
                             ? sideCategory.subcategories
                             : null
                     }
+                    url={sideCategory.url ? sideCategory.url : null}
                     accordionTitle={sideCategory.name}
-                    onClik={() => console.log(sideCategory.subcategories)}
                 >
                     {sideCategory.name}
                 </Accordion>
@@ -26,6 +33,7 @@ const SideMenu = (props) => (
 );
 
 SideMenu.propTypes = {
+    handleOpen: PropTypes.func,
     onClick: PropTypes.func,
     open: PropTypes.bool.isRequired
 };

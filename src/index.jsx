@@ -7,6 +7,7 @@ import Maps from './pages/Maps';
 import MyDestination from './pages/MyDestination';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ThematicMap from './pages/ThematicMap';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -15,8 +16,9 @@ ReactDOM.render(
             <Header />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/maps" component={Maps} />
-                <Route path="/mydestination" component={MyDestination} />
+                <Route exact path="/cartes" component={Maps} />
+                <Route path="/cartes/:theme" component={ThematicMap} />
+                <Route path="/ma-destination" component={MyDestination} />
                 <Route component={Error} />
                 <Home />
             </Switch>

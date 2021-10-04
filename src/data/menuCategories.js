@@ -6,23 +6,24 @@ export const menuCategories = [
             {
                 id: 1,
                 name: `Vie Quotidienne`,
-                url: '../../pages/Maps/index'
+                url: '/cartes/Vie-Quotidienne'
             },
             {
                 id: 2,
                 name: `Santé et Sécurité`,
-                url: '../../pages/Maps/index'
+                url: '/cartes/Santé-et-Sécurité'
             },
             {
                 id: 3,
                 name: `Environnement`,
-                url: '../../pages/Maps/index'
+                url: '/cartes/Environnement'
             }
-        ]
+        ],
+        url: '/cartes'
     },
     {
         id: 2,
         name: 'Ma Destination',
-        url: '../../pages/MyDestiantion/index'
+        url: '/ma-destination'
     }
 ];

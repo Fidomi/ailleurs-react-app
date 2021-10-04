@@ -38,7 +38,7 @@ const FranceMap = [
     {
         d: 'M449.8 409.2l-3 .1-1.4 1.4-5.3-.2-4.6 3.3-3.2-2.1-5 1.6-.9 1.8-3.5 2.7-6.4-4.3-5.2 1.7-.3 1.4.1-.1 3.2 2.1-4.3 2.8-1.8 3.5 2.1 1.8-.2 3.7 3.4 3.2-.9.7-3.9-.2v1.4l1.8.9v.5l-1.6 1.4.9 1.1h1.4l1.4 1.4.2 1.1-1.8 1.1-1.4 1.6-.2 3.9.5.7 3.5 1.6 1 3.9 2.2.4 2-1.4 3.5-2.2 6.1.6-.2 1.6-2 1 4.7.2-1.2-1.2-.4-2.5 2.5-1.8 2.9 1 1.2.4 1 1.2 1.4-1 .4-2.6 1.6-1.3h4.1l1.2-1.8 2.7.8 3.1-1.3v-5.1l-4.1.2 3.1-1.9 1.6-2.2.4-3.1 5.7-.8 3.2-3.5-2.2-2.3v-1.3l-1.1-1.1 1.4-1.2-.3-2-2.3-.9h-1.2l-2.1-2.1-.4-3.7-2.3-1.1-2.3-.2-.9-2.1 2.4-1.2z',
         dataName: 'Var',
-        dataNum: '33',
+        dataNum: '83',
         fill: '',
         stroke: ''
     },
@@ -703,7 +703,7 @@ function France(props) {
         >
             {FranceMap.map((dpt) => (
                 <Departement
-                    key={`id-dpt.dataNum`}
+                    key={`id-${dpt.dataNum}`}
                     d={dpt.d}
                     data-num={dpt.dataNum}
                     data-name={dpt.dataName}
@@ -716,14 +716,13 @@ function France(props) {
 }
 
 France.propTypes = {
-    d: PropTypes.string.isRequired,
-    'data-name': PropTypes.string.isRequired,
-    'data-num': PropTypes.string.isRequired,
-    fill: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired,
-    stroke: PropTypes.string.isRequired,
-    width: PropTypes.string.isRequired
+    d: PropTypes.string,
+    'data-name': PropTypes.string,
+    'data-num': PropTypes.string,
+    fill: PropTypes.string,
+    height: PropTypes.string,
+    stroke: PropTypes.string,
+    width: PropTypes.string
 };
 
 export default France;

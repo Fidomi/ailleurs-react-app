@@ -21,7 +21,6 @@ function Header() {
     const handleOver = () => {
         setHover(true);
         setOpen(true);
-        console.log(isHover);
     };
 
     return (
@@ -33,7 +32,7 @@ function Header() {
                 </Title>
             </Link>
             <NavLinks>
-                <StyledLink to="/maps" onMouseOver={handleOver}>
+                <StyledLink to="/cartes" onMouseOver={handleOver}>
                     <Button
                         type="button"
                         buttonStyle="successOutline"
@@ -42,11 +41,9 @@ function Header() {
                         Cartes
                     </Button>
                 </StyledLink>
-                {isHover && (
-                    <SideMenu open={open} OnMouseLeave={() => setOpen(false)} />
-                )}
+                {isHover && <SideMenu open={open} handleOpen={setOpen} />}
 
-                <Link to={'/myDestination'}>
+                <Link to={'/ma-destination'}>
                     <Button
                         type="button"
                         buttonStyle="successSolid"
