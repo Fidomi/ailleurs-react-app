@@ -1,8 +1,8 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
+import {colors} from "../../utils/styles/colors";
+import {fontSizes} from "../../utils/styles/fonts";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { colors } from "../../utils/styles/colors";
-import { fontSizes } from "../../utils/styles/fonts";
-import { Link } from "react-router-dom";
 
 export const StyledAccordionSection = styled.div`
   box-sizing: border-box;
@@ -43,16 +43,16 @@ export const AccordionList = styled.ul`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: ${({ open }) => (open ? `0.2rem 1.5rem` : `0px`)};
+  padding: ${({open}) => (open ? `0.2rem 1.5rem` : `0px`)};
   margin: 0;
 `;
 
 export const AccordionItem = styled.li`
-  display: ${({ open }) => (open ? "flex" : "none")};
+  display: ${({open}) => (open ? `flex` : `none`)};
   color: ${colors.primary};
   background-color: ${colors.secondary};
   width: 100%;
-  font-size: ${fontSizes.fontM};
+  font-size: ${fontSizes.fontS};
   &:last-of-type {
     margin-bottom: 0.2rem;
   }
@@ -61,6 +61,7 @@ export const AccordionItem = styled.li`
 export const AccordionIcon = styled(FontAwesomeIcon)`
   color: ${colors.primary};
   font-size: ${fontSizes.fontM};
+  text-transform: uppercase;
   transform: ${(props) => (props.open ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 

@@ -1,14 +1,13 @@
 import colors from "../../utils/styles/colors";
 import device from "../../utils/styles/device";
-import { fontSizes } from "../../utils/styles/fonts";
+import {fontSizes} from "../../utils/styles/fonts";
 import styled from "styled-components";
-
 export const HeaderContainer = styled.header`
   position: relative;
   z-index: 1000;
-  height: 2rem;
+  height: 3.5rem;
   margin: 0 auto;
-  padding: 0.5rem 0.62rem;
+  padding: 0.62rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,7 +31,8 @@ export const NavLinks = styled.nav`
 `;
 
 export const HeaderLogo = styled.img`
-  max-height: 1.25rem;
+  box-sizing: content-box;
+  max-height: 1.92rem;
   padding: 1rem 0.1rem 1rem 1rem;
 
   @media ${device.tablet} {
@@ -42,7 +42,7 @@ export const HeaderLogo = styled.img`
 `;
 
 export const TitleText = styled.h1`
-  font-size: ${fontSizes.fontM};
+  font-size: ${fontSizes.fontL};
   padding: 5px;
   margin: 0;
   color: ${colors.success};
