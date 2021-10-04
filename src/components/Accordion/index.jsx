@@ -1,45 +1,60 @@
-import React, { useState } from "react";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+/* eslint-disable sort-keys */
+/* eslint-disable sort-imports */
+import React, { useState } from 'react';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import {
-  StyledAccordionSection,
-  AccordionWrapper,
-  AccordionTitle,
-  AccordionList,
-  AccordionItem,
-  AccordionIcon,
-  StyledLink,
-} from "./style.js";
+    AccordionIcon,
+    AccordionItem,
+    AccordionList,
+    AccordionTitle,
+    AccordionWrapper,
+    StyledAccordionSection,
+    StyledLink
+} from './style.js';
+import PropTypes from 'prop-types';
 
 export const Accordion = (props) => {
-  const [open, setOpen] = useState(false);
-  console.log("props>>>>>>", props);
+    const [open, setOpen] = useState(false);
 
-  return (
-    <AccordionWrapper open={open}>
-      <AccordionTitle>
-        {props.accordionTitle}
-        {props.subcategories != null && (
-          <AccordionIcon
-            open={open}
-            onClick={() => setOpen(!open)}
-            icon={faChevronDown}
-          />
-        )}
-      </AccordionTitle>
-      <AccordionList open={open}>
-        {props.subcategories &&
-          props.subcategories.map((subcategory) => {
-            return (
-              <AccordionItem key={subcategory.id} open={open}>
-                <StyledLink to={subcategory.url}>{subcategory.name}</StyledLink>
-              </AccordionItem>
-            );
-          })}
-      </AccordionList>
-    </AccordionWrapper>
-  );
+    return (
+        <AccordionWrapper open={open}>
+            <AccordionTitle>
+                {props.accordionTitle}
+                {props.subcategories !== null && (
+                    <AccordionIcon
+                        open={open}
+                        onClick={() => setOpen(!open)}
+                        icon={faChevronDown}
+                    />
+                )}
+            </AccordionTitle>
+            <AccordionList open={open}>
+                {props.subcategories &&
+                    props.subcategories.map((subcategory) => (
+                        <AccordionItem key={subcategory.id} open={open}>
+                            <StyledLink to={subcategory.url}>
+                                {subcategory.name}
+                            </StyledLink>
+                        </AccordionItem>
+                    ))}
+            </AccordionList>
+        </AccordionWrapper>
+    );
 };
 
-export const AccordionSection = (props) => {
-  return <StyledAccordionSection>{props.children}</StyledAccordionSection>;
+export function AccordionSection(props) {
+    return <StyledAccordionSection>{props.children}</StyledAccordionSection>;
+}
+
+Accordion.propTypes = {
+    accordionTitle: PropTypes.string.isRequired,
+    // Todo : correct "any" type
+    subcategories: PropTypes.oneOfType([PropTypes.object, PropTypes.any])
+};
+
+AccordionSection.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 };
