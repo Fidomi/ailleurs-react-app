@@ -44,9 +44,11 @@
         "padded-blocks": [
             "error",
             "never"
-        ]
-        // "max-len": 0,
-        // "id-length": 0
+        ],
+        "no-console": 0,
+        "array-element-newline": 0,
+        "function-call-argument-newline": 0,
+        "no-warning-comments": 0
     },
     "settings": {
         "react": {
