@@ -7,16 +7,13 @@ import { StyledSideMenu } from './style';
 import { menuCategories as sideCategories } from '../../data/menuCategories';
 
 const SideMenu = (props) => (
-    // Console.log('les props dans SideMenu', props);
     <StyledSideMenu
         open={props.open}
         onMouseLeave={() => {
             props.setLeft(true);
-            console.log('isLeft', props.left);
         }}
         onMouseEnter={() => {
             props.setLeft(false);
-            console.log('isLeft', props.left);
         }}
     >
         <AccordionSection>
