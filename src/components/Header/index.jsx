@@ -14,14 +14,19 @@ import {
 import { React, useState } from 'react';
 import SideMenu from '../SideMenu';
 import StyledLink from '../StyledLink/index';
+import device from '../../utils/styles/device';
 
 function Header() {
-    const [isHover, setHover] = useState(false);
+    const mqList = window.matchMedia(device.tablet);
+    const isTablet = mqList.matches;
     const [open, setOpen] = useState(false);
-    const handleOver = () => {
-        setHover(true);
-        setOpen(true);
-    };
+
+    /*
+     * Const handleOver = () => {
+     *     setHover(true);
+     *     setOpen(true);
+     * };
+     */
 
     return (
         <HeaderContainer>
@@ -32,7 +37,12 @@ function Header() {
                 </Title>
             </Link>
             <NavLinks>
-                <StyledLink to="/cartes" onMouseOver={handleOver}>
+                <StyledLink
+                    to="/cartes"
+                    onMouseOver={() => {
+                        setOpen(true);
+                    }}
+                >
                     <Button
                         type="button"
                         buttonStyle="successOutline"
@@ -41,7 +51,13 @@ function Header() {
                         Cartes
                     </Button>
                 </StyledLink>
-                {isHover && <SideMenu open={open} handleOpen={setOpen} />}
+                {{ open } && (
+                    <SideMenu
+                        open={open}
+                        setOpen={setOpen}
+                        isTablet={isTablet}
+                    />
+                )}
 
                 <Link to={'/ma-destination'}>
                     <Button
@@ -53,7 +69,7 @@ function Header() {
                     </Button>
                 </Link>
             </NavLinks>
-            <BurgerMenu open={open} handleOpen={setOpen} />
+            <BurgerMenu open={open} setOpen={setOpen} isTablet={isTablet} />
         </HeaderContainer>
     );
 }

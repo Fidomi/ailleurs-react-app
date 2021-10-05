@@ -5,7 +5,7 @@ function Error() {
     return (
         <ErrorContainer>
             <ErrorTitle>Oups</ErrorTitle>
-            <ErrorTitle>Il semblerait qu'il y ait un problème!</ErrorTitle>
+            <ErrorTitle>{`Il semblerait qu'il y ait un problème!`}</ErrorTitle>
         </ErrorContainer>
     );
 }

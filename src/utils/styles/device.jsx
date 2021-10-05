@@ -1,3 +1,5 @@
+/* eslint-disable line-comment-position */
+/* eslint-disable no-inline-comments */
 /* eslint-disable sort-keys */
 const size = {
     mobileS: '320px',

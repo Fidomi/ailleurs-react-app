@@ -8,19 +8,24 @@ const BurgerMenu = (props) => (
     <MenuWrapper>
         <BurgerMenuWrapper
             open={props.open}
-            onClick={() => props.handleOpen(!props.open)}
+            onClick={() => props.setOpen(!props.open)}
         >
             <BurgerLine open={props.open}></BurgerLine>
             <BurgerLine open={props.open}></BurgerLine>
             <BurgerLine open={props.open}></BurgerLine>
         </BurgerMenuWrapper>
-        <SideMenu open={props.open} />
+        <SideMenu
+            open={props.open}
+            setOpen={props.setOpen}
+            isTablet={props.isTablet}
+        />
     </MenuWrapper>
 );
 
 export default BurgerMenu;
 
 BurgerMenu.propTypes = {
-    handleOpen: PropTypes.func,
-    open: PropTypes.bool.isRequired
+    isTablet: PropTypes.bool,
+    open: PropTypes.bool.isRequired,
+    setOpen: PropTypes.func
 };

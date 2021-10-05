@@ -1,3 +1,5 @@
+/* eslint-disable id-length */
+import PropTypes from 'prop-types';
 import React from 'react';
 
 function Departement(props) {
@@ -13,3 +15,11 @@ function Departement(props) {
 }
 
 export default Departement;
+
+Departement.propTypes = {
+    d: PropTypes.string,
+    dataName: PropTypes.string,
+    dataNum: PropTypes.string,
+    fill: PropTypes.string,
+    stroke: PropTypes.string
+};

@@ -1,7 +1,12 @@
-import { createGlobalStyle } from "styled-components";
-import colors from "./colors";
-import { fonts, fontSizes } from "./fonts";
-import device from "./device";
+/* eslint-disable indent */
+/* eslint-disable no-confusing-arrow */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable max-len */
+import { fontSizes, fonts } from './fonts';
+import React from 'react';
+import colors from './colors';
+import { createGlobalStyle } from 'styled-components';
+import device from './device';
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
@@ -13,7 +18,7 @@ const StyledGlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         background-color: ${({ isDarkMode }) =>
-          isDarkMode ? colors.dark : colors.secondary};
+            isDarkMode ? colors.dark : colors.secondary};
         margin: 0;
         font-size:${fontSizes.fontM};
         z-index:0;
@@ -51,7 +56,7 @@ const StyledGlobalStyle = createGlobalStyle`
 `;
 
 function GlobalStyle() {
-  return <StyledGlobalStyle />;
+    return <StyledGlobalStyle />;
 }
 
 export default GlobalStyle;
