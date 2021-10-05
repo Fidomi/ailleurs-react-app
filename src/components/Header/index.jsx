@@ -11,7 +11,7 @@ import {
     Title,
     TitleText
 } from './style';
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import SideMenu from '../SideMenu';
 import StyledLink from '../StyledLink/index';
 import device from '../../utils/styles/device';
@@ -20,13 +20,13 @@ function Header() {
     const mqList = window.matchMedia(device.tablet);
     const isTablet = mqList.matches;
     const [open, setOpen] = useState(false);
+    const [left, setLeft] = useState(false);
 
-    /*
-     * Const handleOver = () => {
-     *     setHover(true);
-     *     setOpen(true);
-     * };
-     */
+    useEffect(() => {
+        if (isTablet && left) {
+            setOpen(false);
+        }
+    }, [isTablet, left]);
 
     return (
         <HeaderContainer>
@@ -53,9 +53,12 @@ function Header() {
                 </StyledLink>
                 {{ open } && (
                     <SideMenu
+                        key="sidemenu01"
                         open={open}
                         setOpen={setOpen}
                         isTablet={isTablet}
+                        setLeft={setLeft}
+                        left={left}
                     />
                 )}
 

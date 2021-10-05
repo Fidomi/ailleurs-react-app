@@ -1,3 +1,5 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-confusing-arrow */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { colors } from '../../utils/styles/colors';
@@ -43,12 +45,12 @@ export const AccordionList = styled.ul`
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: ${({ open }) => (open ? `0.2rem 1.5rem` : `0px`)};
+    padding: ${({ chevronopen }) => (chevronopen ? `0.2rem 1.5rem` : `0px`)};
     margin: 0;
 `;
 
 export const AccordionItem = styled.li`
-    display: ${({ open }) => (open ? `flex` : `none`)};
+    display: ${({ chevronopen }) => (chevronopen ? `flex` : `none`)};
     color: ${colors.primary};
     background-color: ${colors.secondary};
     width: 100%;
@@ -62,7 +64,8 @@ export const AccordionIcon = styled(FontAwesomeIcon)`
     color: ${colors.primary};
     font-size: ${fontSizes.fontM};
     text-transform: uppercase;
-    transform: ${(props) => (props.open ? 'rotate(180deg)' : 'rotate(0deg)')};
+    transform: ${({ chevronopen }) =>
+        chevronopen ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;
 
 export const StyledLink = styled(Link)`

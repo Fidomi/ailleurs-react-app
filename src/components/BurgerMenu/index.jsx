@@ -15,6 +15,7 @@ const BurgerMenu = (props) => (
             <BurgerLine open={props.open}></BurgerLine>
         </BurgerMenuWrapper>
         <SideMenu
+            key="sidemenu02"
             open={props.open}
             setOpen={props.setOpen}
             isTablet={props.isTablet}
