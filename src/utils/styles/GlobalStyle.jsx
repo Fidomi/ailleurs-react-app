@@ -16,10 +16,11 @@ const StyledGlobalStyle = createGlobalStyle`
 
     html,
     body {
+        width:100vw;
+        height:100vh;
         margin: 0;
         background-color: ${({ isDarkMode }) =>
             isDarkMode ? colors.dark : colors.secondary};
-        margin: 0;
         font-size:${fontSizes.fontM};
         z-index:0;
     }
