@@ -7,7 +7,7 @@ function ThematicMap() {
     return (
         <div>
             <h1>Le thème est {theme}</h1>
-            <France width="500px" height="483px" />
+            <France width="100%" height="auto" />
         </div>
     );
 }

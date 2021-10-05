@@ -5,7 +5,7 @@ function Maps() {
     return (
         <div>
             Cartes
-            <France width="500px" height="483px" />
+            <France width="100%" height="auto" />
         </div>
     );
 }
