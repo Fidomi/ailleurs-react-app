@@ -1,7 +1,7 @@
 # Ailleurs
 
 **Work in progress.**
-This project was made while learning React v16. It's an app that helps everyone who wants to move in France to find his perfect location.
+This project was made while learning React v17. It's an app that helps everyone who wants to move in France to find his perfect location.
 I took datas from INSEE and french government to make the criterias that are used to define the best destination.
 
 ## Technical scope
