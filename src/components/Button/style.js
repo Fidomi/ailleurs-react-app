@@ -108,6 +108,12 @@ export const StyledButton = styled.button`
     background-color: ${STYLES.primarySolid.backgroundColor};
     color: ${STYLES.primarySolid.color};`;
     }};
+    ${(props) => {
+        const maxW = props.maxWidth ? props.maxWidth : 'none';
+        const minW = props.minWidth ? props.minWidth : 'none';
+        return `max-width: ${maxW};
+            min-width: ${minW};`;
+    }};
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s ease;

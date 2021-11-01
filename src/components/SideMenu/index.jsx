@@ -29,6 +29,7 @@ const SideMenu = (props) => (
                     }
                     url={sideCategory.url ? sideCategory.url : null}
                     accordionTitle={sideCategory.name}
+                    left={props.left}
                 >
                     {sideCategory.name}
                 </Accordion>

@@ -7,13 +7,17 @@ export const Button = ({
     type,
     onClick,
     buttonStyle,
-    buttonSize
+    buttonSize,
+    maxWidth,
+    minWidth
 }) => (
     <StyledButton
         onClick={onClick}
         type={type}
         buttonSize={buttonSize}
         buttonStyle={buttonStyle}
+        maxWidth={maxWidth}
+        minWidth={minWidth}
     >
         {children}
     </StyledButton>
@@ -26,6 +30,8 @@ Button.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]),
+    maxWidth: PropTypes.string,
+    minWidth: PropTypes.string,
     onClick: PropTypes.func,
     type: PropTypes.string
 };

@@ -19,6 +19,8 @@ const BurgerMenu = (props) => (
             open={props.open}
             setOpen={props.setOpen}
             isTablet={props.isTablet}
+            setLeft={props.setLeft}
+            left={props.left}
         />
     </MenuWrapper>
 );
@@ -27,6 +29,8 @@ export default BurgerMenu;
 
 BurgerMenu.propTypes = {
     isTablet: PropTypes.bool,
+    left: PropTypes.bool,
     open: PropTypes.bool.isRequired,
-    setOpen: PropTypes.func
+    setLeft: PropTypes.any,
+    setOpen: PropTypes.any
 };

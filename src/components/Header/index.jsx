@@ -72,7 +72,13 @@ function Header() {
                     </Button>
                 </Link>
             </NavLinks>
-            <BurgerMenu open={open} setOpen={setOpen} isTablet={isTablet} />
+            <BurgerMenu
+                open={open}
+                setOpen={setOpen}
+                isTablet={isTablet}
+                setLeft={setLeft}
+                left={left}
+            />
         </HeaderContainer>
     );
 }

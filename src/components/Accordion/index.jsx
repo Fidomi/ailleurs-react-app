@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable sort-keys */
 /* eslint-disable sort-imports */
-import { useState, React } from 'react';
+import { useEffect, useState, React } from 'react';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import {
     AccordionIcon,
@@ -19,6 +19,9 @@ import PropTypes from 'prop-types';
 
 export const Accordion = (props) => {
     const [chevronOpen, setChevronOpen] = useState(0);
+    useEffect(() => {
+        props.left ? setChevronOpen(0) : setChevronOpen(1);
+    }, [props.left]);
     return (
         <AccordionWrapper open={props.open}>
             {props.subcategories !== null && (
@@ -67,6 +70,7 @@ export function AccordionSection(props) {
 
 Accordion.propTypes = {
     accordionTitle: PropTypes.string.isRequired,
+    left: PropTypes.bool,
     // Todo : correct "any" type
     subcategories: PropTypes.oneOfType([PropTypes.object, PropTypes.any]),
     url: PropTypes.oneOfType([PropTypes.string, PropTypes.any]),
