@@ -1,16 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable dot-location */
-/* eslint-disable indent */
-/* eslint-disable function-paren-newline */
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable max-len */
-/* eslint-disable max-lines-per-function */
+
 import { ChevronIcon, Container, Question, QuestionText } from './style';
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AnswersContainer from '../AnswersContainer/index';
 import PropTypes from 'prop-types';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { SurveyContext } from '../../utils/context/index';
 import { useQuery } from 'react-query';
 
 const fetchQuestion = async () => {
@@ -25,6 +21,21 @@ const SurveyQuestion = (props) => {
     );
     const [chevronOpen, setChevronOpen] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(0);
+    const { activeQuestion, setActiveQuestion } = useContext(SurveyContext);
+    const clickChevrons = (num) => {
+        if (chevronOpen === 0) {
+            setChevronOpen(1);
+            setActiveQuestion(num);
+        } else {
+            setChevronOpen(0);
+            setActiveQuestion(null);
+        }
+    };
+    useEffect(() => {
+        props.questionNumber === activeQuestion
+            ? setChevronOpen(1)
+            : setChevronOpen(0);
+    }, [activeQuestion, props.questionNumber]);
 
     return (
         <Container key={props.questionNumber}>
@@ -43,11 +54,7 @@ const SurveyQuestion = (props) => {
                     </QuestionText>
                     <ChevronIcon
                         chevronopen={chevronOpen}
-                        onClick={() => {
-                            chevronOpen === 0
-                                ? setChevronOpen(1)
-                                : setChevronOpen(0);
-                        }}
+                        onClick={(event) => clickChevrons(props.questionNumber)}
                         icon={faChevronDown}
                     />
                 </Question>
@@ -69,5 +76,7 @@ const SurveyQuestion = (props) => {
 export default SurveyQuestion;
 
 SurveyQuestion.propTypes = {
-    questionNumber: PropTypes.number
+    activeQuestion: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    questionNumber: PropTypes.number,
+    setActiveQuestion: PropTypes.func
 };

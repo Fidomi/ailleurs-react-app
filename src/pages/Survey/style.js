@@ -6,16 +6,15 @@ import device from '../../utils/styles/device';
 import styled from 'styled-components';
 
 export const SurveyContainer = styled.form`
-    height: 170vh;
+    height: 100vh;
     width: 100vw;
     background-image: url(${BackgroundImage});
     background-size: cover;
-    background-repeat: space repeat;
+    backgroud-position: center;
     margin: 1rem 0 0 0;
     display: flex;
     flex-direction: column;
     @media ${device.tablet} {
-        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }

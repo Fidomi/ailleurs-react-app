@@ -11,8 +11,10 @@ import device from './device';
 const StyledGlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
-        font-family: ${fonts.fontBody};
+        font-family: ${colors.secondary};
     }
+
+    --form-control-color: rebeccapurple;
 
     html,
     body {
@@ -53,6 +55,9 @@ const StyledGlobalStyle = createGlobalStyle`
     button,li,a{
         text-decoration: none;
     }
+    @media ${device.laptop} {
+        html,
+    body {font-size: ${fontSizes.fontRegular};}
 
 `;
 

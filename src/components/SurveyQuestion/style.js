@@ -18,7 +18,7 @@ export const Question = styled.div`
 
 export const QuestionText = styled.label`
     width: 95%;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0 0.3rem;
 `;
 

@@ -47,7 +47,7 @@ export const TitleText = styled.h1`
     font-size: ${fontSizes.fontL};
     padding: 5px;
     margin: 0;
-    color: ${colors.success};
+    color: ${colors.dark};
     transition: transform 0.3s ease;
     &:hover {
         transform: translateY(-3px);

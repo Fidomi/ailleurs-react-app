@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    padding: 0.3rem 0;
+    padding: 0.2rem 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,21 @@ export const Container = styled.div`
 `;
 
 export const Answer = styled.input`
-    width: 5%;
+    appearance: none;
+    background-color: #fff;
+    padding: 0 0.5rem 0 0;
+    margin: 0 0.4rem 0 0;
+    font: inherit;
+    color: ${colors.warning};
+    height: 1.15rem;
+    width: 1.2rem;
+    border: 0.15em solid ${colors.warning};
+    border-radius: 50%;
+    flow: 1;
+    &:checked {
+        background-color: ${colors.primary};
+        border: 0.03em solid ${colors.white};
+    }
 `;
 
 export const AnswerLabel = styled.label`

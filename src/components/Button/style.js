@@ -19,7 +19,7 @@ const STYLES = {
         border: 'none'
     },
     successSolid: {
-        backgroundColor: colors.success,
+        backgroundColor: colors.primary,
         color: colors.white,
         border: 'none'
     },
