@@ -5,17 +5,27 @@ export const colors = {
     secondary: '#f5f5f5',
     danger: '#eb3f27',
     warning: '#eb6h45',
-    blueish: '#70947A',
+    blueish: '#6ea4d3',
     white: '#fdfdfd',
-    dark: '#070A0B'
+    dark: '#070A0B',
+    finalist: '#09161e',
+    transparent: 'rgba(100%,0,0,0)'
 };
 
 export const colorsMap = {
-    veryLow: '#E6E7FD',
-    low: '#C6C6F7',
-    medium: '#ADA5F9',
-    strong: '#6263A7',
-    veryStrong: '#33365E'
+    veryLow: '#e6f3fc',
+    low: '#c4def5',
+    medium: '#6ea4d3',
+    strong: '#6085a4',
+    veryStrong: '#344c5c'
 };
+
+// export const colorsMap = {
+//     veryLow: '#d5ccc8',
+//     low: '#f0e683',
+//     medium: '#f3d92e',
+//     strong: '#97c175',
+//     veryStrong: '#39942d'
+// };
 
 export default colors;

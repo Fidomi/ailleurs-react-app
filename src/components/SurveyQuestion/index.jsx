@@ -2,11 +2,11 @@
 /* eslint-disable dot-location */
 
 import { ChevronIcon, Container, Question, QuestionText } from './style';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import AnswersContainer from '../AnswersContainer/index';
 import PropTypes from 'prop-types';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { SurveyContext } from '../../utils/context/index';
+import { ResultsContext, SurveyContext } from '../../utils/context/index';
 import { useQuery } from 'react-query';
 
 const fetchQuestion = async () => {
@@ -19,9 +19,16 @@ const SurveyQuestion = (props) => {
     const { status, data, error, isFetching } = useQuery(`survey`, () =>
         fetchQuestion()
     );
+    const { activeQuestion, setActiveQuestion } = useContext(SurveyContext);
+    const { answers, saveAnswers } = useContext(ResultsContext);
     const [chevronOpen, setChevronOpen] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(0);
-    const { activeQuestion, setActiveQuestion } = useContext(SurveyContext);
+
+    const saveSelectedAnswer = (num) => {
+        setSelectedAnswer(answers[num]);
+        return selectedAnswer;
+    };
+
     const clickChevrons = (num) => {
         if (chevronOpen === 0) {
             setChevronOpen(1);

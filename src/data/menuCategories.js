@@ -6,17 +6,17 @@ export const menuCategories = [
             {
                 id: 1,
                 name: `Vie Quotidienne`,
-                url: '/cartes/Vie-Quotidienne'
+                url: '/cartes/family'
             },
             {
                 id: 2,
                 name: `Santé et Sécurité`,
-                url: '/cartes/Santé-et-Sécurité'
+                url: '/cartes/security'
             },
             {
                 id: 3,
                 name: `Environnement`,
-                url: '/cartes/Environnement'
+                url: '/cartes/environment'
             }
         ],
         url: '/cartes'

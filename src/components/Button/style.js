@@ -31,27 +31,27 @@ const STYLES = {
     primaryOutline: {
         backgroundColor: 'none',
         color: colors.primary,
-        border: `1px solid ${colors.primary}`
+        border: `0.15rem solid ${colors.primary}`
     },
     secondaryOutline: {
         backgroundColor: 'none',
         color: colors.secondary,
-        border: `1px solid ${colors.secondary}`
+        border: `0.15rem solid ${colors.secondary}`
     },
     warningOutline: {
         backgroundColor: 'none',
         color: colors.warning,
-        border: `1px solid ${colors.warning}`
+        border: `0.15rem solid ${colors.warning}`
     },
     successOutline: {
         backgroundColor: 'none',
         color: colors.success,
-        border: `1px solid ${colors.success}`
+        border: `0.15rem solid ${colors.primary}`
     },
     dangerOutline: {
         backgroundColor: 'none',
         color: colors.danger,
-        border: `1px solid ${colors.danger}`
+        border: `0.15rem solid ${colors.danger}`
     }
 };
 
@@ -80,8 +80,10 @@ const SIZES = {
 
 export const StyledButton = styled.button`
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0 0.8rem 0 0;
+    margin: 0.2rem;
     text-transform: uppercase;
+    display: flex;
+    flex-flow: row wrap;
     ${(props) => {
         if (props.buttonSize) {
             const btnSize = SIZES[props.buttonSize];
@@ -99,6 +101,7 @@ export const StyledButton = styled.button`
         if (props.buttonStyle) {
             const btnStyle = STYLES[props.buttonStyle];
             return `
+    border: none;
     border : ${btnStyle.border};
     background-color: ${btnStyle.backgroundColor};
     color: ${btnStyle.color};`;

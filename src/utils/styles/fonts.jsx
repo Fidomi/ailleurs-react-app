@@ -1,5 +1,6 @@
 /* eslint-disable sort-keys */
 export const fonts = {
+    fontLogo: `'Bubbler One', sans-serif;`,
     fontTitle: `'Playfair Display', serif`,
     fontBody: `'Roboto', sans-serif`
 };

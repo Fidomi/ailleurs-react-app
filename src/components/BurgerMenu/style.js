@@ -20,8 +20,8 @@ export const BurgerMenuWrapper = styled.div`
 `;
 
 export const BurgerLine = styled.div`
-    background-color: ${colors.primary};
-    height: 6px;
+    background-color: ${colors.blueish};
+    height: 5px;
     width: 2.3rem;
     align-self: center;
     transition: all linear;

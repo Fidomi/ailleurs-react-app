@@ -1,7 +1,8 @@
 /* eslint-disable sort-imports */
+import { fontSizes, fonts } from '../../utils/styles/fonts';
 import colors from '../../utils/styles/colors';
 import device from '../../utils/styles/device';
-import { fontSizes } from '../../utils/styles/fonts';
+
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
@@ -44,7 +45,8 @@ export const HeaderLogo = styled.img`
 `;
 
 export const TitleText = styled.h1`
-    font-size: ${fontSizes.fontL};
+    font-family: ${fonts.fontLogo};
+    font-size: ${fontSizes.fontXL};
     padding: 5px;
     margin: 0;
     color: ${colors.dark};

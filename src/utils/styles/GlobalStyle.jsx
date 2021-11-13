@@ -11,7 +11,7 @@ import device from './device';
 const StyledGlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
-        font-family: ${colors.secondary};
+        font-family: ${fonts.fontBody};
     }
 
     --form-control-color: rebeccapurple;

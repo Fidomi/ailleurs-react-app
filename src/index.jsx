@@ -5,9 +5,11 @@ import GlobalStyle from './utils/styles/GlobalStyle';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Maps from './pages/Maps';
+import MyDestination from './pages/MyDestination';
 import React from 'react';
 import ReactDOM from 'react-dom';
-// Import { ReactQueryDevtools } from 'react-query/devtools';
+import { ResultsProvider } from './utils/context/index';
+import Refining from './pages/Refining';
 import Survey from './pages/Survey';
 import ThematicMap from './pages/ThematicMap';
 
@@ -17,18 +19,33 @@ ReactDOM.render(
     <React.StrictMode>
         <GlobalStyle />
         <QueryClientProvider client={queryClient}>
-            <BrowserRouter>
-                <Header />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/cartes" component={Maps} />
-                    <Route path="/cartes/:theme" component={ThematicMap} />
-                    <Route path="/ma-destination" component={Survey} />
-                    <Route component={Error} />
-                    <Home />
-                </Switch>
-            </BrowserRouter>
-            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+            <ResultsProvider>
+                <BrowserRouter>
+                    <Header />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/cartes" component={Maps} />
+                        <Route path="/cartes/:type">
+                            <ThematicMap />
+                        </Route>
+                        <Route
+                            exact
+                            path="/ma-destination"
+                            component={Survey}
+                        />
+                        <Route
+                            path="/ma-destination/resultats"
+                            component={MyDestination}
+                        />
+                        <Route
+                            path="/ma-destination/reglages"
+                            component={Refining}
+                        />
+                        <Route component={Error} />
+                        <Home />
+                    </Switch>
+                </BrowserRouter>
+            </ResultsProvider>
         </QueryClientProvider>
     </React.StrictMode>,
     document.getElementById('root')

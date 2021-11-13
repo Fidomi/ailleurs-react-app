@@ -1,12 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable function-paren-newline */
 import { Answer, AnswerLabel, Container } from './style';
+import React, { useContext } from 'react';
+import { ResultsContext } from '../../utils/context/index';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 const AnswersContainer = (props) => {
+    const { answers, saveAnswers } = useContext(ResultsContext);
     function handleSelectChange(event) {
         props.setSelectedAnswer(parseInt(event.target.value, 10));
+        saveAnswers(props.questionNumber, parseInt(event.target.value, 10));
     }
+
     return (
         <Container>
             {props.dataAnswers.answers.map((answer, index) => (
@@ -16,11 +21,11 @@ const AnswersContainer = (props) => {
                 >
                     <Answer
                         type="radio"
-                        value={index}
                         name={`answer-${props.questionNumber}-${index}`}
                         id={`answer-${props.questionNumber}-${index}`}
-                        checked={props.selectedAnswer === index}
-                        onChange={handleSelectChange}
+                        checked={answers[`a${props.questionNumber}`] === index}
+                        onChange={(event) => handleSelectChange(event)}
+                        value={index}
                     />
                     {answer.charAt(0).toUpperCase() + answer.substring(1)}
                 </AnswerLabel>

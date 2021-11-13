@@ -21,9 +21,23 @@ SurveyProvider.propTypes = {
 export const ResultsContext = createContext();
 
 export const ResultsProvider = ({ children }) => {
-    const [answers, setAnswers] = useState({});
-    const saveAnswers = (newAnswers) => {
-        setAnswers({ ...answers, ...newAnswers });
+    const [answers, setAnswers] = useState({
+        a0: 0,
+        a1: 0,
+        a2: 0,
+        a3: 0,
+        a4: 0,
+        a5: 0,
+        a6: 0,
+        a7: 0,
+        a8: 0
+    });
+    const saveAnswers = (questionNumber, newAnswer) => {
+        const currentAnswer = 'a' + questionNumber;
+        setAnswers((answers) => {
+            answers[currentAnswer] = newAnswer;
+            return { ...answers };
+        });
     };
 
     return (

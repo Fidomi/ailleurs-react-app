@@ -1,6 +1,6 @@
+import { StyledButton } from './style';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyledButton } from './style';
 
 export const Button = ({
     children,

@@ -27,7 +27,7 @@ export const Answer = styled.input`
     flow: 1;
     &:checked {
         background-color: ${colors.primary};
-        border: 0.03em solid ${colors.white};
+        border: 0.25em solid ${colors.white};
     }
 `;
 

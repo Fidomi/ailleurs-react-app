@@ -1,8 +1,15 @@
-import { GroupButtons, SetOfQuestions, SurveyContainer, Text } from './style';
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import {
+    Background,
+    GroupButtons,
+    SetOfQuestions,
+    SurveyContainer,
+    Text
+} from './style';
+import React, { useState, useContext } from 'react';
 import { Button } from '../../components/Button';
-//import { Link } from 'react-router-dom';
-import { SurveyProvider } from '../../utils/context/index';
+import { SurveyProvider, ResultsContext } from '../../utils/context/index';
+import StyledLink from '../../components/StyledLink/index';
 import SurveyQuestion from '../../components/SurveyQuestion';
 
 const createSetOfQuestions = (pageNum) => {
@@ -25,63 +32,66 @@ const createSetOfQuestions = (pageNum) => {
 
 const Survey = () => {
     const [surveyPage, setSurveyPage] = useState(1);
-    const handleSurvey = () => {
-        console.log('this is the survey');
-    };
+    const { answers, saveAnswers } = useContext(ResultsContext);
 
     return (
         <SurveyProvider>
-            <SurveyContainer>
-                <Text>
-                    <h3>Votre Profil</h3>
-                    Entrez quelques informations sur votre situation personnelle
-                    et vos préférences de vie, afin que l’on détermine quels
-                    sont les critères importants et ceux qui le sont moins.
-                </Text>
-                <SetOfQuestions>
-                    {createSetOfQuestions(surveyPage).map((question) => (
-                        <SurveyQuestion
-                            key={`id_${question}`}
-                            questionNumber={question}
-                        />
-                    ))}
-                </SetOfQuestions>
-                <GroupButtons>
-                    {surveyPage > 1 && surveyPage <= 3 && (
-                        <Button
-                            onClick={() => setSurveyPage(surveyPage - 1)}
-                            buttonSize="medMobile"
-                            buttonStyle="primarySolid"
-                            minWidth="8rem"
-                            type="button"
-                        >
-                            PREV
-                        </Button>
-                    )}
-                    {surveyPage >= 1 && surveyPage < 3 && (
-                        <Button
-                            onClick={() => setSurveyPage(surveyPage + 1)}
-                            buttonSize="medMobile"
-                            buttonStyle="primarySolid"
-                            minWidth="8rem"
-                            type="button"
-                        >
-                            SUIVANT
-                        </Button>
-                    )}
-                    {surveyPage === 3 && (
-                        <Button
-                            onClick={() => handleSurvey()}
-                            buttonSize="medMobile"
-                            buttonStyle="secondarySolid"
-                            minWidth="8rem"
-                            type="button"
-                        >
-                            OK
-                        </Button>
-                    )}
-                </GroupButtons>
-            </SurveyContainer>
+            <Background page={surveyPage}>
+                <SurveyContainer>
+                    <Text>
+                        <h3>Votre Profil</h3>
+                        Entrez quelques informations sur votre situation
+                        personnelle et vos préférences de vie, afin que l’on
+                        détermine quels sont les critères importants et ceux qui
+                        le sont moins.
+                    </Text>
+                    <SetOfQuestions>
+                        {createSetOfQuestions(surveyPage).map((question) => (
+                            <SurveyQuestion
+                                key={`id_${question}`}
+                                questionNumber={question}
+                            />
+                        ))}
+                    </SetOfQuestions>
+                    <GroupButtons>
+                        {surveyPage > 1 && surveyPage <= 3 && (
+                            <Button
+                                onClick={() => {
+                                    setSurveyPage(surveyPage - 1);
+                                }}
+                                buttonSize="medMobile"
+                                buttonStyle="primarySolid"
+                                minWidth="8rem"
+                                type="button"
+                            >
+                                PREV
+                            </Button>
+                        )}
+                        {surveyPage >= 1 && surveyPage < 3 && (
+                            <Button
+                                onClick={() => setSurveyPage(surveyPage + 1)}
+                                buttonSize="medMobile"
+                                buttonStyle="primarySolid"
+                                minWidth="8rem"
+                                type="button"
+                            >
+                                SUIVANT
+                            </Button>
+                        )}
+                        {surveyPage === 3 && (
+                            <StyledLink to="/ma-destination/resultats">
+                                <Button
+                                    buttonSize="medMobile"
+                                    buttonStyle="secondarySolid"
+                                    minWidth="8rem"
+                                >
+                                    OK
+                                </Button>
+                            </StyledLink>
+                        )}
+                    </GroupButtons>
+                </SurveyContainer>
+            </Background>
         </SurveyProvider>
     );
 };
