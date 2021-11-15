@@ -34,7 +34,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0.5rem 0.5rem;
-    @media ${device.tablet} {
+    @media (min-width: 1200px) {
         width: 33%;
     }
     @media ${device.desktop} {

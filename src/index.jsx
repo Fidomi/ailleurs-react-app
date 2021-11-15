@@ -22,28 +22,30 @@ ReactDOM.render(
             <ResultsProvider>
                 <BrowserRouter>
                     <Header />
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/cartes" component={Maps} />
-                        <Route path="/cartes/:type">
-                            <ThematicMap />
-                        </Route>
-                        <Route
-                            exact
-                            path="/ma-destination"
-                            component={Survey}
-                        />
-                        <Route
-                            path="/ma-destination/resultats"
-                            component={MyDestination}
-                        />
-                        <Route
-                            path="/ma-destination/reglages"
-                            component={Refining}
-                        />
-                        <Route component={Error} />
-                        <Home />
-                    </Switch>
+                    <main>
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/cartes" component={Maps} />
+                            <Route path="/cartes/:type">
+                                <ThematicMap />
+                            </Route>
+                            <Route
+                                exact
+                                path="/ma-destination"
+                                component={Survey}
+                            />
+                            <Route
+                                path="/ma-destination/resultats"
+                                component={MyDestination}
+                            />
+                            <Route
+                                path="/ma-destination/reglages"
+                                component={Refining}
+                            />
+                            <Route component={Error} />
+                            <Home />
+                        </Switch>
+                    </main>
                 </BrowserRouter>
             </ResultsProvider>
         </QueryClientProvider>

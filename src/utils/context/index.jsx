@@ -12,7 +12,6 @@ export const SurveyProvider = ({ children }) => {
         </SurveyContext.Provider>
     );
 };
-
 SurveyProvider.propTypes = {
     children: PropTypes.object
 };
@@ -48,5 +47,20 @@ export const ResultsProvider = ({ children }) => {
 };
 
 ResultsProvider.propTypes = {
+    children: PropTypes.object
+};
+
+// Handle theme of the map
+export const ThemeMapContext = createContext();
+
+export const ThemeMapProvider = ({ children }) => {
+    const [resultWord, setResultWord] = useState('result');
+    return (
+        <ThemeMapContext.Provider value={{ resultWord, setResultWord }}>
+            {children}
+        </ThemeMapContext.Provider>
+    );
+};
+ThemeMapProvider.propTypes = {
     children: PropTypes.object
 };

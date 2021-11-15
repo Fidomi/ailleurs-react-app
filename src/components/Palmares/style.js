@@ -1,4 +1,4 @@
-//import { colorsMap } from '../../utils/styles/colors';
+import { colors } from '../../utils/styles/colors';
 import device from '../../utils/styles/device';
 import { fontSizes } from '../../utils/styles/fonts';
 import styled from 'styled-components';
@@ -13,7 +13,9 @@ export const StyledPalmares = styled.div`
         max-width: ${(props) =>
             props.palmaresSize === 'small' ? '90%' : '70%'};
         max-height: ${(props) =>
-            props.palmaresSize === 'small' ? '6rem' : 'none'};
+            props.palmaresSize === 'small' ? '10rem' : 'none'};
+        background-color: ${(props) =>
+            props.palmaresSize === 'small' ? colors.dark : colors.white};
         display: flex;
         flex-flow: column wrap;
         margin: 1em auto;
@@ -25,6 +27,8 @@ export const StyledPalmares = styled.div`
                 props.palmaresSize === 'small'
                     ? fontSizes.fontRegular
                     : fontSizes.fontXS};
+            color: ${(props) =>
+                props.palmaresSize === 'small' ? colors.white : colors.dark};
             margin: 0;
             padding: 0;
         }
@@ -33,9 +37,11 @@ export const StyledPalmares = styled.div`
     @media ${device.laptopL} {
         width: 25%;
         height: auto;
+        align-self: ${(props) =>
+            props.palmaresSize === 'small' ? 'center' : 'flex-start'};
         & > div {
             max-height: ${(props) =>
-                props.palmaresSize === 'small' ? '10rem' : '50rem'};
+                props.palmaresSize === 'small' ? '15rem' : '50rem'};
             max-width: 95%;
             flex-wrap: wrap;
             & > p {

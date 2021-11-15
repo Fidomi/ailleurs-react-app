@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import France from '../../components/France/index';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -13,27 +13,22 @@ const handleMapsTypes = (type) => {
     if (type) {
         switch (type) {
             case 'security':
-                return 'danger_total';
+                return ['danger_total', `Santé et Sécurité`];
             case 'family':
-                return 'daily_life_confort';
+                return ['daily_life_confort', `Vie Quotidienne`];
             case 'environment':
-                return 'environmental_health';
+                return ['environmental_health', `Environnement`];
             default:
-                return 'result';
+                return ['result', 'Ma destination'];
         }
     }
-    return 'result';
+    return ['result', 'Ma destination'];
 };
 
 function ThematicMap() {
     const { type } = useParams();
-    const defaultResultWord = handleMapsTypes(type);
-    const [resultWord, setResultWord] = useState(defaultResultWord);
-
-    useEffect(() => {
-        let result = handleMapsTypes(type);
-        setResultWord(result);
-    }, [type, resultWord]);
+    const resultWord = handleMapsTypes(type)[0];
+    const typeTitle = handleMapsTypes(type)[1];
 
     let { status, data, error } = useQuery(
         `results-${type}`,
@@ -48,11 +43,10 @@ function ThematicMap() {
             {status === 'loading' && <div>Loading data...</div>}
             {status === 'success' && (
                 <France
-                    title={type}
+                    title={typeTitle}
                     results={results}
                     type={type}
                     resultWord={resultWord}
-                    setResultWord={setResultWord}
                 />
             )}
         </React.Fragment>

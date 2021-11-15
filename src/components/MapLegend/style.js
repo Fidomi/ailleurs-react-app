@@ -16,9 +16,11 @@ export const StyledTable = styled.div`
         margin: 0 auto;
     }
     @media ${device.laptopL} {
-        width: 25%;
+        max-width: 28%;
         order: 1;
         align-self: flex-end;
+        margin-bottom: 5rem;
+        padding-right: 5rem;
         & > div {
             flex-flow: column;
         }

@@ -4,7 +4,7 @@ import {
     HeroText,
     HeroTextTitle
 } from './style';
-import menuMaps from '../../data/menuMaps';
+import { menuCategories } from '../../data/menuCategories';
 import Card from '../../components/Card';
 import React from 'react';
 
@@ -18,10 +18,10 @@ function Maps() {
                 selon ce qui vous importe le plus.
             </HeroText>
             <CardsContainer>
-                {menuMaps.map((category, index) => (
+                {menuCategories[0].subcategories.map((category, index) => (
                     <Card
                         key={`${category.name}-${index}`}
-                        link={category.link}
+                        link={category.url}
                         picture={category.imagePath}
                         logo={category.logoPath}
                         title={category.name}

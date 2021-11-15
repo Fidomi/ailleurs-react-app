@@ -9,7 +9,9 @@ export const colors = {
     white: '#fdfdfd',
     dark: '#070A0B',
     finalist: '#09161e',
-    transparent: 'rgba(100%,0,0,0)'
+    transparent: 'rgba(100%,0,0,0)',
+    shadow: 'rgba(0,0,0,50%)',
+    grey: 'rgb(85%,85%,85%)'
 };
 
 export const colorsMap = {

@@ -9,8 +9,7 @@ export const ResultsContainer = styled.div`
     width: 90vw;
     justify-content: center;
     align-items: center;
-    margin: 0 0;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     @media ${device.laptopL} {
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -22,8 +21,10 @@ export const MapContainer = styled.div`
     max-width: 600px;
     margin: 0 0;
     order: 1;
+    align-self: flex-start;
     @media ${device.laptopL} {
         order: 2;
+        width: 40%;
     }
 `;
 

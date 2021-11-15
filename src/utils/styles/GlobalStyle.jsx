@@ -27,6 +27,10 @@ const StyledGlobalStyle = createGlobalStyle`
         z-index:0;
     }
 
+    main{
+        margin-top:3.5rem;
+    }
+
     h1{
         font-family: ${fonts.fontTitle};
         font-size: ${fontSizes.fontM};

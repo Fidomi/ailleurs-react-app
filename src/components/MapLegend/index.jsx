@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { StyledCell, StyledTable } from './style';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const addColor = (index) => {
     switch (index) {
@@ -62,7 +62,6 @@ function sortResults(spreadResults, resultWord) {
 }
 
 function MapLegend(props) {
-    console.log('MapLegend>>>>>>', props.results);
     const legendData = sortResults(props.results, props.resultWord);
 
     return (

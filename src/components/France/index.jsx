@@ -113,21 +113,27 @@ function France(props) {
                 palmaresSize={palmaresSize}
                 buttonSize="smallMobile"
                 buttonStyle="successOutline"
-                maxWidth="10rem"
-                minWidth="10rem"
+                maxWidth="12rem"
+                minWidth="12rem"
             >
-                {palmaresSize === 'small' ? 'CLASSEMENT COMPLET' : 'LE PODIUM'}
+                <div>
+                    {palmaresSize === 'small'
+                        ? 'CLASSEMENT COMPLET'
+                        : 'LE PODIUM'}
+                </div>
             </Button>
-            <StyledLink to="/ma-destination/reglages">
-                <Button
-                    buttonSize="smallMobile"
-                    buttonStyle="successSolid"
-                    maxWidth="10rem"
-                    minWidth="10rem"
-                >
-                    AFFINER
-                </Button>
-            </StyledLink>
+            {resultWord === 'result' && (
+                <StyledLink to="/ma-destination/reglages">
+                    <Button
+                        buttonSize="smallMobile"
+                        buttonStyle="successSolid"
+                        maxWidth="12rem"
+                        minWidth="12rem"
+                    >
+                        <div>AFFINER</div>
+                    </Button>
+                </StyledLink>
+            )}
         </MainContainer>
     );
 }

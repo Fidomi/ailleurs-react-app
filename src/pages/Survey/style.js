@@ -8,8 +8,8 @@ import device from '../../utils/styles/device';
 import styled from 'styled-components';
 
 export const Background = styled.div`
-    height: 100vh;
     width: 100vw;
+    height: 170vh;
     padding-top: 2em;
     background-image: ${(props) => {
         if (props.page === 1) {
@@ -22,19 +22,25 @@ export const Background = styled.div`
     }};
     background-size: cover;
     backgroud-position: center;
+    @media (min-width: 1200px) {
+        height: 100vh;
+    }
 `;
 
 export const SurveyContainer = styled.form`
     margin: auto auto;
     padding-bottom: 2em;
-    min-height: 80vh;
+    width: 90%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgba(100%, 100%, 100%, 35%);
     @media ${device.tablet} {
         width: 80vw;
         max-width: 1400px;
         border-radius: 2em;
         background-color: rgba(100%, 100%, 100%, 25%);
+        min-height: 70vh;
     }
 `;
 
@@ -60,7 +66,9 @@ export const SetOfQuestions = styled.div`
     display: flex;
     flex-direction: column;
     flex: 2;
-    @media ${device.tablet} {
+    margin: 0 auto;
+    justify-content: center;
+    @media (min-width: 1200px) {
         flex-direction: row;
         margin: 1rem 5%;
         justify-content: space-between;

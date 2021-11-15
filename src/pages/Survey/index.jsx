@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import {
     Background,
     GroupButtons,
@@ -6,9 +5,9 @@ import {
     SurveyContainer,
     Text
 } from './style';
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../../components/Button';
-import { SurveyProvider, ResultsContext } from '../../utils/context/index';
+import { SurveyProvider } from '../../utils/context/index';
 import StyledLink from '../../components/StyledLink/index';
 import SurveyQuestion from '../../components/SurveyQuestion';
 
@@ -32,7 +31,6 @@ const createSetOfQuestions = (pageNum) => {
 
 const Survey = () => {
     const [surveyPage, setSurveyPage] = useState(1);
-    const { answers, saveAnswers } = useContext(ResultsContext);
 
     return (
         <SurveyProvider>
@@ -64,7 +62,7 @@ const Survey = () => {
                                 minWidth="8rem"
                                 type="button"
                             >
-                                PREV
+                                <div>PREV</div>
                             </Button>
                         )}
                         {surveyPage >= 1 && surveyPage < 3 && (
@@ -75,7 +73,7 @@ const Survey = () => {
                                 minWidth="8rem"
                                 type="button"
                             >
-                                SUIVANT
+                                <div>SUIVANT</div>
                             </Button>
                         )}
                         {surveyPage === 3 && (
@@ -85,7 +83,7 @@ const Survey = () => {
                                     buttonStyle="secondarySolid"
                                     minWidth="8rem"
                                 >
-                                    OK
+                                    <div>OK</div>
                                 </Button>
                             </StyledLink>
                         )}
