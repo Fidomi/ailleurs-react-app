@@ -6,15 +6,19 @@ import device from '../../utils/styles/device';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0px;
     z-index: 1000;
     height: 3.5rem;
     margin: 0 auto;
     padding: 0.62rem;
+    background-color: ${colors.secondary};
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    filter: drop-shadow(0px -3px 5px ${colors.shadow});
 
     @media ${device.tablet} {
         height: 4rem;

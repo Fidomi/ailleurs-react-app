@@ -10,7 +10,6 @@ export const StyledAccordionSection = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: auto;
     overflow: auto;
     margin: 1rem 0 0 0;
 `;
@@ -27,6 +26,7 @@ export const AccordionTitle = styled.button`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-height: 3rem;
     padding: 0.25rem 0.8rem;
     text-transform: uppercase;
     font-size: ${fontSizes.fontS};
@@ -34,7 +34,7 @@ export const AccordionTitle = styled.button`
     position: relative;
     border: none;
     background-color: ${colors.secondary};
-    border-top: 1px solid ${colors.primary};
+    border-bottom: 1px solid ${colors.primary};
 `;
 
 export const AccordionList = styled.ul`
@@ -42,8 +42,8 @@ export const AccordionList = styled.ul`
     list-style: none;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     width: 100%;
     padding: ${({ chevronopen }) => (chevronopen ? `0.2rem 1.5rem` : `0px`)};
     margin: 0;
@@ -71,4 +71,5 @@ export const AccordionIcon = styled(FontAwesomeIcon)`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: ${colors.primary};
+    margin: 0.2rem 0;
 `;

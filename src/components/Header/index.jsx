@@ -25,6 +25,7 @@ function Header() {
     useEffect(() => {
         if (isTablet && left) {
             setOpen(false);
+            setLeft(false);
         }
     }, [isTablet, left]);
 
@@ -47,8 +48,9 @@ function Header() {
                         type="button"
                         buttonStyle="successOutline"
                         buttonSize="smallMobile"
+                        minWidth="5rem"
                     >
-                        Cartes
+                        <div>Cartes</div>
                     </Button>
                 </StyledLink>
                 {{ open } && (
@@ -67,8 +69,9 @@ function Header() {
                         type="button"
                         buttonStyle="successSolid"
                         buttonSize="smallMobile"
+                        minWidth="8rem"
                     >
-                        Ma Destination
+                        <div>Ma Destination</div>
                     </Button>
                 </Link>
             </NavLinks>

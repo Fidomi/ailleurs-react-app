@@ -3,7 +3,6 @@ import device from '../../utils/styles/device';
 import styled from 'styled-components';
 
 export const StyledSideMenu = styled.div`
-    height: auto;
     width: 100vw;
     top: 3rem;
     position: absolute;

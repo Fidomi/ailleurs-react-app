@@ -120,6 +120,11 @@ export const StyledButton = styled.button`
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    & > div {
+        padding: 0;
+        margin: 0.2rem auto;
+        text-align: center;
+    }
     &:hover {
         transform: translateY(-3px);
     }
