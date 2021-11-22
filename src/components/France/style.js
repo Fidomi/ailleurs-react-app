@@ -19,12 +19,13 @@ export const ResultsContainer = styled.div`
 export const MapContainer = styled.div`
     width: 100%;
     max-width: 600px;
-    margin: 0 0;
+    margin: 0 auto;
     order: 1;
     align-self: flex-start;
     @media ${device.laptopL} {
         order: 2;
         width: 40%;
+        margin: 0 0;
     }
 `;
 

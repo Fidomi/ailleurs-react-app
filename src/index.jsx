@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Maps from './pages/Maps';
 import MyDestination from './pages/MyDestination';
+// import { ReactQueryDevtools } from 'react-query/devtools';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ResultsProvider } from './utils/context/index';
@@ -48,6 +49,7 @@ ReactDOM.render(
                     </main>
                 </BrowserRouter>
             </ResultsProvider>
+            {/* <ReactQueryDevtools initialIsOpen={true} /> */}
         </QueryClientProvider>
     </React.StrictMode>,
     document.getElementById('root')
