@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 export const ErrorContainer = styled.div`
     width: 92%;
-    margin: 30px;
+    margin: auto auto;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    background-color: ${colors.primary};
+    background-color: ${colors.secondary};
     align-items: center;
 `;
 
