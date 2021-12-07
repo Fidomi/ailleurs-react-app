@@ -11,7 +11,7 @@ import { SurveyProvider } from '../../utils/context/index';
 import StyledLink from '../../components/StyledLink/index';
 import SurveyQuestion from '../../components/SurveyQuestion';
 
-const createSetOfQuestions = (pageNum) => {
+export const createSetOfQuestions = (pageNum) => {
     let setOfQuestions = [];
     switch (pageNum) {
         case 1:
